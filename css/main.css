@@ -3,7 +3,7 @@
 ========================================================= */
 @font-face {
     font-family: 'CuteNotes';
-    src: url('../fonts/Cute Notes.ttf') format('truetype');
+    src: url('../fonts/Cute%20Notes.ttf') format('truetype');
     font-weight: 1000;
     font-style: normal;
 }
@@ -34,7 +34,7 @@
 ========================================================= */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 h1 { font-size:44px; }
-body { background-color: #CD92F2; color: white; margin:0px; width:100%; overflow-x: hidden; }
+body { background-color: #CD92F2; color: white; margin:0px; width:100%; } 
 a { text-decoration: none; color: inherit; }
 p { font-size: 38px; font-family: 'King', sans-serif; }
 
@@ -46,8 +46,22 @@ body::before {
     filter: blur(10px); z-index: -1;
 }
 
-header.main { position: sticky; margin: 0px; top: 0; width: 100vw; background-color: #490080; overflow: hidden; text-align: center; align-items: center; z-index: 10; }
-video.title { position: absolute; left: 0; width: 100%; z-index: -1; }
+/* HEADER PRINCIPAL */
+header.main { 
+    position: relative; 
+    margin: 0px; 
+    top: 0; 
+    width: 100%; 
+    height: 232px; 
+    background-color: #490080; 
+    overflow: hidden; 
+    text-align: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    z-index: 10; 
+}
+video.title { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
 h1.title { font-size: 92px; z-index: +1; color: aliceblue; font-family: 'CuteNotes', sans-serif; display: inline-block; letter-spacing: -35px; }
 .title span { display: inline-block; }
 span.tembleque1{ animation: tembleque1 3s ease-in-out infinite;}
@@ -68,12 +82,26 @@ div.text { display: flex; align-items: center; justify-content: center; height: 
 .text-content { display: flex; flex-direction: column; align-items: center; max-width: 500px; }
 h1.text { font-size: 48px; margin: 0 0 10px 0; }
 p.text { font-size: 28px; }
+
+/* =========================================================
+   VÍDEO DE YOUTUBE CENTRADO
+========================================================= */
+iframe {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%; 
+    border-radius: 15px;
+}
+
+/* =========================================================
+   FOOTER Y EQUIPO
+========================================================= */
 footer { background-color:rebeccapurple; width: 100%; margin:0px; box-sizing:border-box; }
 h1.aboutus { color: white; text-align: center; font-weight: 900; font-size: 88px; margin: 0px 10px; position: absolute; left: 50%; transform: translateX(-50%); }
 div.logo { display: flex; align-items: center; justify-content: flex-start; height: 10vw; position: relative; }
 img.logo { width: 10vw; height: auto; margin: 0 0 0 50px; display: block; }
 img.pfp { width: 90%; margin:auto; height: auto; display: block; border-radius: 50%; }
-div.team { display: grid; grid-template-columns: repeat(4, 1fr); gap: 100px; max-width:1500px; width: 100vw; margin:auto; overflow-x:auto; }
+div.team { display: grid; grid-template-columns: repeat(4, 1fr); gap: 100px; max-width:1500px; width: 100%; margin:auto; overflow-x:auto; } 
 div.pfp { overflow: hidden; text-align: center; }
 h2.pfp { font-size: 36px; font-weight: 900; color: white; }
 p.pfp { font-size: 32px; color: white; }
@@ -82,7 +110,9 @@ p.pfp { font-size: 32px; color: white; }
 .card p { font-size: 1rem; margin: 0 15px 15px; color: #555; }
 span.offer { color: #FF3B3B; }
 
-/* Barra lateral */
+/* =========================================================
+   BARRA LATERAL
+========================================================= */
 .sidebar { height: 100vh; width: 0; position: fixed; top: 0; left: 0; background-color: #111; overflow-x: hidden; transition: 0.3s; padding-top: 60px; z-index: 20; }
 .sidebar a { padding: 10px 10px; text-decoration: none; font-size: 18px; color: white; display: block; transition: 0.3s; }
 .sidebar a:hover { background-color: #575757; }
@@ -99,14 +129,16 @@ div.item { width:250px; background-color: #490080; border-top:#111 5px solid; bo
 /* Quitar el Blur del fondo solo en la Promo Page */
 body.promo-body::before { filter: none; }
 
-/* Header transparente y de la altura del vídeo */
+/* HEADER PROMO */
 header.promo-header {
-    background-color: transparent; /* Quita la parte morada */
-    height: 80vh; /* Altura grande como la del video */
+    position: relative; 
+    background-color: #490080; 
+    height: 232px; 
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0;
+    margin-bottom: 0; 
 }
 
 .promo-centered { text-align: center; }
@@ -130,6 +162,7 @@ header.promo-header {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    margin-top: 0px; 
     margin-bottom: 0px; 
 }
 .promo-plushy-bg {
@@ -187,7 +220,7 @@ h1.ourstufftext { text-align: center; font-size: 150px; color: white; margin: 0;
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
-    header.promo-header { height: auto; padding: 100px 0; }
+    header.promo-header { height: auto; padding: 60px 0; }
     .promo-mug-section { flex-direction: column; text-align: center; margin: 50px auto; }
     .mug-text { text-align: center; }
     .shirts-grid { grid-template-columns: 1fr; }
