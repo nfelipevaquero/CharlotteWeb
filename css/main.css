@@ -21,13 +21,20 @@
 }
 
 /* =========================================================
-   2. ANIMACIONES DE TEMBLEQUE
+   2. ANIMACIONES DE TEMBLEQUE Y BOTÓN
 ========================================================= */
 @keyframes tembleque1 { 0% { transform: translateY(0); } 25% { transform: translateY(-5px); } 50% { transform: translateY(5px); } 75% { transform: translateY(-5px); } 100% { transform: translateY(0); } }
 @keyframes tembleque2 { 0% { transform: translateY(0); } 20% { transform: translateY(3px); } 40% { transform: translateY(-3px); } 60% { transform: translateY(3px); } 80% { transform: translateY(-3px); } 100% { transform: translateY(0); } }
 @keyframes tembleque3 { 0% { transform: translateY(0); } 30% { transform: translateY(-10px); } 60% { transform: translateY(10px); } 100% { transform: translateY(0); } }
 @keyframes tembleque4 { 0% { transform: translateY(0); } 50% { transform: translateY(7px); } 100% { transform: translateY(0); } }
 @keyframes tembleque5 { 0% { transform: translateY(0); } 40% { transform: translateY(-3px); } 80% { transform: translateY(3px); } 100% { transform: translateY(0); } }
+
+/* Animación de latido para el botón de descarga */
+@keyframes pulseButton {
+    0% { transform: scale(1); box-shadow: 0 10px 30px rgba(73, 0, 128, 0.4); }
+    50% { transform: scale(1.05); box-shadow: 0 15px 40px rgba(73, 0, 128, 0.8); }
+    100% { transform: scale(1); box-shadow: 0 10px 30px rgba(73, 0, 128, 0.4); }
+}
 
 /* =========================================================
    3. ESTILOS BASE Y PÁGINA PRINCIPAL (INDEX.HTML)
@@ -73,8 +80,42 @@ span.tembleque5{ animation: tembleque5 3s ease-in-out infinite;}
 div.h1title { position:relative; margin:auto; }
 h1.subtitle { margin: 100px 0px 100px 100px; font-size:56px; font-family: 'King', sans-serif; }
 div.subtitle { background-color: #111; margin:-32px 0px 0px 0px; padding: 10px; }
-div.download_button { font-size: 50px; color: white; text-align: center; padding: 5px; background-color: #490080; border-radius: 60px; max-width: 40vw; margin:auto; }
-p.download_button { text-align: center; font-family: 'Itim', sans-serif; font-weight: 1000; }
+
+/* =========================================================
+   BOTÓN DE DESCARGA (NUEVO DISEÑO LLAMATIVO)
+========================================================= */
+div.download_button { 
+    font-size: 60px; /* Letra más grande */
+    color: white; 
+    text-align: center; 
+    padding: 15px 40px; /* Más espacio interior */
+    background-color: #490080; 
+    border-radius: 60px; 
+    max-width: 50vw; /* Un poco más ancho */
+    margin: 60px auto; /* Más separación arriba y abajo */
+    border: 5px solid white; /* Borde blanco para que destaque */
+    box-shadow: 0 10px 30px rgba(73, 0, 128, 0.6); /* Sombra inicial */
+    animation: pulseButton 2s infinite; /* Efecto de latido constante */
+    transition: all 0.3s ease; /* Transiciones suaves al pasar el ratón */
+    cursor: pointer;
+}
+
+div.download_button:hover {
+    transform: scale(1.1); /* Se hace un 10% más grande al pasar el ratón */
+    background-color: #6000a8; /* Un morado un pelín más claro */
+    box-shadow: 0 15px 40px rgba(73, 0, 128, 0.9); /* Sombra más fuerte */
+    border-color: #FFD700; /* El borde se vuelve dorado (opcional, cámbialo a white si no te gusta) */
+    animation: none; /* Pausa el latido mientras lo estás apuntando */
+}
+
+p.download_button { 
+    text-align: center; 
+    font-family: 'Itim', sans-serif; 
+    font-weight: 1000; 
+    margin: 0; /* Quita el margen por defecto del párrafo para centrarlo perfecto */
+}
+/* ========================================================= */
+
 img.img_l { max-width: 40vw; height: auto; margin: 20px 50px; float: left; border-radius: 25px; }
 img.img_r { max-width: 40vw; height:auto; margin:20px 50px; float:right; border-radius: 25px; }
 div.main { margin: 100px auto; text-align: center; width: 90vw; }
@@ -82,7 +123,149 @@ div.text { display: flex; align-items: center; justify-content: center; height: 
 .text-content { display: flex; flex-direction: column; align-items: center; max-width: 500px; }
 h1.text { font-size: 48px; margin: 0 0 10px 0; }
 p.text { font-size: 28px; }
+¡Entendido, vamos a hacerlo gigante y espectacular! He captado perfectamente lo que buscas.
 
+Aquí tienes el archivo main.css completo con las siguientes modificaciones específicas para el botón de descarga:
+
+Aún más grande: He aumentado drásticamente el tamaño base de la fuente y los márgenes internos (padding). Ocupará mucha más pantalla.
+
+Hover blanco (no amarillo): He eliminado el borde dorado al pasar el ratón. Ahora mantiene su borde blanco original, pero brillando más intensamente.
+
+Hover gigante: Cuando pases el ratón por encima, se hará notablemente más grande (scale(1.25)).
+
+Sigue palpitando en hover: He quitado la instrucción que detenía la animación. Ahora el botón seguirá latiendo mientras pasas el ratón por encima, creando un efecto muy dinámico.
+
+Solo tienes que copiar y reemplazar todo el contenido de tu archivo css/main.css:
+
+CSS
+/* =========================================================
+   1. FUENTES (Corregidas con %20)
+========================================================= */
+@font-face {
+    font-family: 'CuteNotes';
+    src: url('../fonts/Cute%20Notes.ttf') format('truetype');
+    font-weight: 1000;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Itim';
+    src: url('../fonts/Itim.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'King';
+    src: url('../fonts/KIN668.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* =========================================================
+   2. ANIMACIONES DE TEMBLEQUE Y BOTÓN
+========================================================= */
+@keyframes tembleque1 { 0% { transform: translateY(0); } 25% { transform: translateY(-5px); } 50% { transform: translateY(5px); } 75% { transform: translateY(-5px); } 100% { transform: translateY(0); } }
+@keyframes tembleque2 { 0% { transform: translateY(0); } 20% { transform: translateY(3px); } 40% { transform: translateY(-3px); } 60% { transform: translateY(3px); } 80% { transform: translateY(-3px); } 100% { transform: translateY(0); } }
+@keyframes tembleque3 { 0% { transform: translateY(0); } 30% { transform: translateY(-10px); } 60% { transform: translateY(10px); } 100% { transform: translateY(0); } }
+@keyframes tembleque4 { 0% { transform: translateY(0); } 50% { transform: translateY(7px); } 100% { transform: translateY(0); } }
+@keyframes tembleque5 { 0% { transform: translateY(0); } 40% { transform: translateY(-3px); } 80% { transform: translateY(3px); } 100% { transform: translateY(0); } }
+
+/* Animación de latido para el botón de descarga */
+@keyframes pulseButton {
+    0% { box-shadow: 0 10px 30px rgba(73, 0, 128, 0.5), 0 0 0 0px rgba(255, 255, 255, 0.4); }
+    50% { box-shadow: 0 20px 50px rgba(73, 0, 128, 0.9), 0 0 0 20px rgba(255, 255, 255, 0); }
+    100% { box-shadow: 0 10px 30px rgba(73, 0, 128, 0.5), 0 0 0 0px rgba(255, 255, 255, 0.4); }
+}
+
+/* =========================================================
+   3. ESTILOS BASE Y PÁGINA PRINCIPAL (INDEX.HTML)
+========================================================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+h1 { font-size:44px; }
+body { background-color: #CD92F2; color: white; margin:0px; width:100%; } 
+a { text-decoration: none; color: inherit; }
+p { font-size: 38px; font-family: 'King', sans-serif; }
+
+body::before {
+    content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('../images/background.jpeg');
+    background-size: cover; background-position: center;
+    background-attachment: fixed; background-repeat: no-repeat;
+    filter: blur(10px); z-index: -1;
+}
+
+/* HEADER PRINCIPAL */
+header.main { 
+    position: relative; 
+    margin: 0px; 
+    top: 0; 
+    width: 100%; 
+    height: 232px; 
+    background-color: #490080; 
+    overflow: hidden; 
+    text-align: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    z-index: 10; 
+}
+video.title { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
+h1.title { font-size: 92px; z-index: +1; color: aliceblue; font-family: 'CuteNotes', sans-serif; display: inline-block; letter-spacing: -35px; }
+.title span { display: inline-block; }
+span.tembleque1{ animation: tembleque1 3s ease-in-out infinite;}
+span.tembleque2{ animation: tembleque2 3s ease-in-out infinite;}
+span.tembleque3{ animation: tembleque3 3s ease-in-out infinite;}
+span.tembleque4{ animation: tembleque4 3s ease-in-out infinite;}
+span.tembleque5{ animation: tembleque5 3s ease-in-out infinite;}
+
+div.h1title { position:relative; margin:auto; }
+h1.subtitle { margin: 100px 0px 100px 100px; font-size:56px; font-family: 'King', sans-serif; }
+div.subtitle { background-color: #111; margin:-32px 0px 0px 0px; padding: 10px; }
+
+/* =========================================================
+   BOTÓN DE DESCARGA (DISEÑO GIGANTE Y PALPITANTE)
+========================================================= */
+div.download_button { 
+    font-size: 80px; /* ¡Aún más grande! */
+    color: white; 
+    text-align: center; 
+    padding: 25px 60px; /* Mucho más espacio interior */
+    background-color: #490080; 
+    border-radius: 80px; /* Bordes más redondeados para el tamaño */
+    max-width: 70vw; /* Mucho más ancho */
+    margin: 80px auto; /* Más separación vertical */
+    border: 8px solid white; /* Borde blanco más grueso */
+    
+    /* Animación de latido y brillo constante */
+    animation: pulseButton 2s infinite ease-in-out;
+    
+    /* Transiciones suaves para el hover */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+div.download_button:hover {
+    transform: scale(1.25); /* Se hace enorme al pasar el ratón */
+    background-color: #6000a8; /* Un morado un pelín más claro */
+    
+    /* Sombra blanca intensa al hacer hover, manteniendo el latido */
+    box-shadow: 0 15px 50px rgba(73, 0, 128, 1), 0 0 30px rgba(255, 255, 255, 0.8);
+    
+    /* Borde sigue blanco */
+    border-color: white;
+    
+    /* SEGUIR PALPITANDO (Borrado 'animation: none') */
+}
+
+p.download_button { 
+    text-align: center; 
+    font-family: 'Itim', sans-serif; 
+    font-weight: 1000; 
+    margin: 0; 
+    letter-spacing: 2px; /* Un poco de espacio entre letras */
+}
+/* ========================================================= */
 /* =========================================================
    VÍDEO DE YOUTUBE CENTRADO
 ========================================================= */
@@ -96,7 +279,7 @@ iframe {
 /* =========================================================
    FOOTER Y EQUIPO
 ========================================================= */
-footer { background-color:rebeccapurple; width: 100%; margin:0px; box-sizing:border-box; }
+footer { background-color:rebeccapurple; width: 100%; margin:0px; box-sizing:border-box; clear: both; }
 h1.aboutus { color: white; text-align: center; font-weight: 900; font-size: 88px; margin: 0px 10px; position: absolute; left: 50%; transform: translateX(-50%); }
 div.logo { display: flex; align-items: center; justify-content: flex-start; height: 10vw; position: relative; }
 img.logo { width: 10vw; height: auto; margin: 0 0 0 50px; display: block; }
