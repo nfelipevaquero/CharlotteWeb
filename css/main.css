@@ -1,413 +1,222 @@
 /* =========================================================
-   1. FUENTES (Corregidas con %20)
+   1. FUENTES
 ========================================================= */
 @font-face {
     font-family: 'CuteNotes';
     src: url('../fonts/Cute%20Notes.ttf') format('truetype');
     font-weight: 1000;
-    font-style: normal;
 }
 @font-face {
     font-family: 'Itim';
     src: url('../fonts/Itim.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
 }
 @font-face {
     font-family: 'King';
     src: url('../fonts/KIN668.TTF') format('truetype');
-    font-weight: normal;
-    font-style: normal;
 }
 
 /* =========================================================
-   2. ANIMACIONES DE TEMBLEQUE Y BOTÓN
-========================================================= */
-@keyframes tembleque1 { 0% { transform: translateY(0); } 25% { transform: translateY(-5px); } 50% { transform: translateY(5px); } 75% { transform: translateY(-5px); } 100% { transform: translateY(0); } }
-@keyframes tembleque2 { 0% { transform: translateY(0); } 20% { transform: translateY(3px); } 40% { transform: translateY(-3px); } 60% { transform: translateY(3px); } 80% { transform: translateY(-3px); } 100% { transform: translateY(0); } }
-@keyframes tembleque3 { 0% { transform: translateY(0); } 30% { transform: translateY(-10px); } 60% { transform: translateY(10px); } 100% { transform: translateY(0); } }
-@keyframes tembleque4 { 0% { transform: translateY(0); } 50% { transform: translateY(7px); } 100% { transform: translateY(0); } }
-@keyframes tembleque5 { 0% { transform: translateY(0); } 40% { transform: translateY(-3px); } 80% { transform: translateY(3px); } 100% { transform: translateY(0); } }
-
-/* Animación de latido para el botón de descarga */
-@keyframes pulseButton {
-    0% { transform: scale(1); box-shadow: 0 10px 30px rgba(73, 0, 128, 0.4); }
-    50% { transform: scale(1.05); box-shadow: 0 15px 40px rgba(73, 0, 128, 0.8); }
-    100% { transform: scale(1); box-shadow: 0 10px 30px rgba(73, 0, 128, 0.4); }
-}
-
-/* =========================================================
-   3. ESTILOS BASE Y PÁGINA PRINCIPAL (INDEX.HTML)
+   2. ESTILOS BASE Y CUERPO
 ========================================================= */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-h1 { font-size:44px; }
-body { background-color: #CD92F2; color: white; margin:0px; width:100%; } 
-a { text-decoration: none; color: inherit; }
-p { font-size: 38px; font-family: 'King', sans-serif; }
 
-body::before {
-    content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background-image: url('../images/background.jpeg');
-    background-size: cover; background-position: center;
-    background-attachment: fixed; background-repeat: no-repeat;
-    filter: blur(10px); z-index: -1;
-}
-
-/* HEADER PRINCIPAL */
-header.main { 
-    position: relative; 
-    margin: 0px; 
-    top: 0; 
-    width: 100%; 
-    height: 232px; 
-    background-color: #490080; 
-    overflow: hidden; 
-    text-align: center; 
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    z-index: 10; 
-}
-video.title { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
-h1.title { font-size: 92px; z-index: +1; color: aliceblue; font-family: 'CuteNotes', sans-serif; display: inline-block; letter-spacing: -35px; }
-.title span { display: inline-block; }
-span.tembleque1{ animation: tembleque1 3s ease-in-out infinite;}
-span.tembleque2{ animation: tembleque2 3s ease-in-out infinite;}
-span.tembleque3{ animation: tembleque3 3s ease-in-out infinite;}
-span.tembleque4{ animation: tembleque4 3s ease-in-out infinite;}
-span.tembleque5{ animation: tembleque5 3s ease-in-out infinite;}
-
-div.h1title { position:relative; margin:auto; }
-h1.subtitle { margin: 100px 0px 100px 100px; font-size:56px; font-family: 'King', sans-serif; }
-div.subtitle { background-color: #111; margin:-32px 0px 0px 0px; padding: 10px; }
-
-/* =========================================================
-   BOTÓN DE DESCARGA (NUEVO DISEÑO LLAMATIVO)
-========================================================= */
-div.download_button { 
-    font-size: 60px; /* Letra más grande */
+body { 
+    background-color: #CD92F2; 
     color: white; 
-    text-align: center; 
-    padding: 15px 40px; /* Más espacio interior */
-    background-color: #490080; 
-    border-radius: 60px; 
-    max-width: 50vw; /* Un poco más ancho */
-    margin: 60px auto; /* Más separación arriba y abajo */
-    border: 5px solid white; /* Borde blanco para que destaque */
-    box-shadow: 0 10px 30px rgba(73, 0, 128, 0.6); /* Sombra inicial */
-    animation: pulseButton 2s infinite; /* Efecto de latido constante */
-    transition: all 0.3s ease; /* Transiciones suaves al pasar el ratón */
-    cursor: pointer;
-}
-
-div.download_button:hover {
-    transform: scale(1.1); /* Se hace un 10% más grande al pasar el ratón */
-    background-color: #6000a8; /* Un morado un pelín más claro */
-    box-shadow: 0 15px 40px rgba(73, 0, 128, 0.9); /* Sombra más fuerte */
-    border-color: #FFD700; /* El borde se vuelve dorado (opcional, cámbialo a white si no te gusta) */
-    animation: none; /* Pausa el latido mientras lo estás apuntando */
-}
-
-p.download_button { 
-    text-align: center; 
-    font-family: 'Itim', sans-serif; 
-    font-weight: 1000; 
-    margin: 0; /* Quita el margen por defecto del párrafo para centrarlo perfecto */
-}
-/* ========================================================= */
-
-img.img_l { max-width: 40vw; height: auto; margin: 20px 50px; float: left; border-radius: 25px; }
-img.img_r { max-width: 40vw; height:auto; margin:20px 50px; float:right; border-radius: 25px; }
-div.main { margin: 100px auto; text-align: center; width: 90vw; }
-div.text { display: flex; align-items: center; justify-content: center; height: auto; width: 90vw; margin-bottom: 100px; gap: 40px; }
-.text-content { display: flex; flex-direction: column; align-items: center; max-width: 500px; }
-h1.text { font-size: 48px; margin: 0 0 10px 0; }
-p.text { font-size: 28px; }
-¡Entendido, vamos a hacerlo gigante y espectacular! He captado perfectamente lo que buscas.
-
-Aquí tienes el archivo main.css completo con las siguientes modificaciones específicas para el botón de descarga:
-
-Aún más grande: He aumentado drásticamente el tamaño base de la fuente y los márgenes internos (padding). Ocupará mucha más pantalla.
-
-Hover blanco (no amarillo): He eliminado el borde dorado al pasar el ratón. Ahora mantiene su borde blanco original, pero brillando más intensamente.
-
-Hover gigante: Cuando pases el ratón por encima, se hará notablemente más grande (scale(1.25)).
-
-Sigue palpitando en hover: He quitado la instrucción que detenía la animación. Ahora el botón seguirá latiendo mientras pasas el ratón por encima, creando un efecto muy dinámico.
-
-Solo tienes que copiar y reemplazar todo el contenido de tu archivo css/main.css:
-
-CSS
-/* =========================================================
-   1. FUENTES (Corregidas con %20)
-========================================================= */
-@font-face {
-    font-family: 'CuteNotes';
-    src: url('../fonts/Cute%20Notes.ttf') format('truetype');
-    font-weight: 1000;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Itim';
-    src: url('../fonts/Itim.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'King';
-    src: url('../fonts/KIN668.TTF') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* =========================================================
-   2. ANIMACIONES DE TEMBLEQUE Y BOTÓN
-========================================================= */
-@keyframes tembleque1 { 0% { transform: translateY(0); } 25% { transform: translateY(-5px); } 50% { transform: translateY(5px); } 75% { transform: translateY(-5px); } 100% { transform: translateY(0); } }
-@keyframes tembleque2 { 0% { transform: translateY(0); } 20% { transform: translateY(3px); } 40% { transform: translateY(-3px); } 60% { transform: translateY(3px); } 80% { transform: translateY(-3px); } 100% { transform: translateY(0); } }
-@keyframes tembleque3 { 0% { transform: translateY(0); } 30% { transform: translateY(-10px); } 60% { transform: translateY(10px); } 100% { transform: translateY(0); } }
-@keyframes tembleque4 { 0% { transform: translateY(0); } 50% { transform: translateY(7px); } 100% { transform: translateY(0); } }
-@keyframes tembleque5 { 0% { transform: translateY(0); } 40% { transform: translateY(-3px); } 80% { transform: translateY(3px); } 100% { transform: translateY(0); } }
-
-/* Animación de latido para el botón de descarga */
-@keyframes pulseButton {
-    0% { box-shadow: 0 10px 30px rgba(73, 0, 128, 0.5), 0 0 0 0px rgba(255, 255, 255, 0.4); }
-    50% { box-shadow: 0 20px 50px rgba(73, 0, 128, 0.9), 0 0 0 20px rgba(255, 255, 255, 0); }
-    100% { box-shadow: 0 10px 30px rgba(73, 0, 128, 0.5), 0 0 0 0px rgba(255, 255, 255, 0.4); }
-}
-
-/* =========================================================
-   3. ESTILOS BASE Y PÁGINA PRINCIPAL (INDEX.HTML)
-========================================================= */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-h1 { font-size:44px; }
-body { background-color: #CD92F2; color: white; margin:0px; width:100%; } 
-a { text-decoration: none; color: inherit; }
-p { font-size: 38px; font-family: 'King', sans-serif; }
-
-body::before {
-    content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background-image: url('../images/background.jpeg');
-    background-size: cover; background-position: center;
-    background-attachment: fixed; background-repeat: no-repeat;
-    filter: blur(10px); z-index: -1;
-}
-
-/* HEADER PRINCIPAL */
-header.main { 
-    position: relative; 
-    margin: 0px; 
-    top: 0; 
-    width: 100%; 
-    height: 232px; 
-    background-color: #490080; 
-    overflow: hidden; 
-    text-align: center; 
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    z-index: 10; 
-}
-video.title { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
-h1.title { font-size: 92px; z-index: +1; color: aliceblue; font-family: 'CuteNotes', sans-serif; display: inline-block; letter-spacing: -35px; }
-.title span { display: inline-block; }
-span.tembleque1{ animation: tembleque1 3s ease-in-out infinite;}
-span.tembleque2{ animation: tembleque2 3s ease-in-out infinite;}
-span.tembleque3{ animation: tembleque3 3s ease-in-out infinite;}
-span.tembleque4{ animation: tembleque4 3s ease-in-out infinite;}
-span.tembleque5{ animation: tembleque5 3s ease-in-out infinite;}
-
-div.h1title { position:relative; margin:auto; }
-h1.subtitle { margin: 100px 0px 100px 100px; font-size:56px; font-family: 'King', sans-serif; }
-div.subtitle { background-color: #111; margin:-32px 0px 0px 0px; padding: 10px; }
-
-/* =========================================================
-   BOTÓN DE DESCARGA (DISEÑO GIGANTE Y PALPITANTE)
-========================================================= */
-div.download_button { 
-    font-size: 80px; /* ¡Aún más grande! */
-    color: white; 
-    text-align: center; 
-    padding: 25px 60px; /* Mucho más espacio interior */
-    background-color: #490080; 
-    border-radius: 80px; /* Bordes más redondeados para el tamaño */
-    max-width: 70vw; /* Mucho más ancho */
-    margin: 80px auto; /* Más separación vertical */
-    border: 8px solid white; /* Borde blanco más grueso */
-    
-    /* Animación de latido y brillo constante */
-    animation: pulseButton 2s infinite ease-in-out;
-    
-    /* Transiciones suaves para el hover */
-    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    position: relative;
-    z-index: 1;
-}
-
-div.download_button:hover {
-    transform: scale(1.25); /* Se hace enorme al pasar el ratón */
-    background-color: #6000a8; /* Un morado un pelín más claro */
-    
-    /* Sombra blanca intensa al hacer hover, manteniendo el latido */
-    box-shadow: 0 15px 50px rgba(73, 0, 128, 1), 0 0 30px rgba(255, 255, 255, 0.8);
-    
-    /* Borde sigue blanco */
-    border-color: white;
-    
-    /* SEGUIR PALPITANDO (Borrado 'animation: none') */
-}
-
-p.download_button { 
-    text-align: center; 
-    font-family: 'Itim', sans-serif; 
-    font-weight: 1000; 
     margin: 0; 
-    letter-spacing: 2px; /* Un poco de espacio entre letras */
+    width: 100%; 
+    overflow-x: hidden; 
+    font-family: 'Itim', sans-serif;
+} 
+
+a { text-decoration: none; color: inherit; }
+
+/* Fondo con desenfoque para la página principal */
+body::before {
+    content: ""; 
+    position: fixed; 
+    top: 0; left: 0; 
+    width: 100%; height: 100%;
+    background-image: url('../images/background.jpeg');
+    background-size: cover; 
+    background-position: center;
+    filter: blur(10px); 
+    z-index: -1;
 }
-/* ========================================================= */
-/* =========================================================
-   VÍDEO DE YOUTUBE CENTRADO
-========================================================= */
-iframe {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%; 
-    border-radius: 15px;
-}
 
 /* =========================================================
-   FOOTER Y EQUIPO
+   3. HEADER Y ELEMENTOS COMUNES
 ========================================================= */
-footer { background-color:rebeccapurple; width: 100%; margin:0px; box-sizing:border-box; clear: both; }
-h1.aboutus { color: white; text-align: center; font-weight: 900; font-size: 88px; margin: 0px 10px; position: absolute; left: 50%; transform: translateX(-50%); }
-div.logo { display: flex; align-items: center; justify-content: flex-start; height: 10vw; position: relative; }
-img.logo { width: 10vw; height: auto; margin: 0 0 0 50px; display: block; }
-img.pfp { width: 90%; margin:auto; height: auto; display: block; border-radius: 50%; }
-div.team { display: grid; grid-template-columns: repeat(4, 1fr); gap: 100px; max-width:1500px; width: 100%; margin:auto; overflow-x:auto; } 
-div.pfp { overflow: hidden; text-align: center; }
-h2.pfp { font-size: 36px; font-weight: 900; color: white; }
-p.pfp { font-size: 32px; color: white; }
-.Merch_text { margin: 10px; }
-.card h2 { font-size: 1.5rem; margin: 15px 0 10px; }
-.card p { font-size: 1rem; margin: 0 15px 15px; color: #555; }
-span.offer { color: #FF3B3B; }
-
-/* =========================================================
-   BARRA LATERAL
-========================================================= */
-.sidebar { height: 100vh; width: 0; position: fixed; top: 0; left: 0; background-color: #111; overflow-x: hidden; transition: 0.3s; padding-top: 60px; z-index: 20; }
-.sidebar a { padding: 10px 10px; text-decoration: none; font-size: 18px; color: white; display: block; transition: 0.3s; }
-.sidebar a:hover { background-color: #575757; }
-div.hover-area { position: fixed; top: 0; left: 0; width: 50px; height: 100vh; background-color: transparent; z-index: 15; }
-img.hover { width: 50px; height: 50px; filter:invert(100%); margin:25px ; cursor: pointer;}
-img.item { margin:0px 25px 25px 25px; width: 200px; height: auto; }
-div.item { width:250px; background-color: #490080; border-top:#111 5px solid; border-bottom:#111 5px solid; }
-
-
-/* =========================================================
-   4. PÁGINA DE PROMO (MERCH)
-========================================================= */
-
-/* Quitar el Blur del fondo solo en la Promo Page */
-body.promo-body::before { filter: none; }
-
-/* HEADER PROMO */
-header.promo-header {
+header.main { 
     position: relative; 
-    background-color: #490080; 
     height: 232px; 
+    background-color: #490080; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    z-index: 10; 
+}
+
+h1.title { 
+    font-size: 92px; 
+    color: aliceblue; 
+    font-family: 'CuteNotes', sans-serif; 
+    letter-spacing: -35px; 
+}
+
+/* Botón de descarga principal */
+div.download_button { 
+    font-size: 60px; 
+    color: white; 
+    text-align: center; 
+    padding: 20px 40px; 
+    background-color: #490080; 
+    border-radius: 80px; 
+    max-width: 600px; 
+    margin: 80px auto; 
+    border: 6px solid white; 
+    cursor: pointer; 
+    transition: transform 0.3s;
+}
+div.download_button:hover { transform: scale(1.1); }
+
+/* =========================================================
+   4. SECCIÓN MERCH (CORREGIDA)
+========================================================= */
+body.promo-body::before { filter: none; } /* Quita el blur en la página de merch */
+
+/* Sección Charlotte Plushy */
+.promo-plushy-section { 
+    position: relative; 
+    width: 100%; 
+    min-height: 600px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.charlotte-title { 
+    font-size: 70px; 
+    font-family: 'King', sans-serif; 
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5); 
+    margin-bottom: 20px; 
+}
+
+.plushy-main-image { 
+    max-height: 500px; 
+    width: auto; 
+    filter: drop-shadow(0px 15px 25px rgba(0,0,0,0.6)); 
+}
+
+/* Banner "OUR STUFF" */
+div.ourstuff { 
+    background-color: #490080; 
+    width: 100%; 
+    padding: 40px 0; 
+    margin: 40px 0;
+}
+h1.ourstufftext { 
+    text-align: center; 
+    font-size: 120px; 
+    color: white; 
+    font-family: 'King', sans-serif; 
+}
+
+/* Cuadrícula de Camisetas */
+.shirts-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px; 
+    width: 90%; 
+    margin: 40px auto; 
+}
+
+.t-shirt-box { 
+    padding: 20px; 
+    text-align: center; 
+    background: rgba(255, 255, 255, 0.1); 
+    border-radius: 20px; 
+}
+
+.t-shirt-box img { 
+    height: 300px; 
+    width: auto; 
+    transition: 0.3s; 
+}
+
+/* =========================================================
+   5. FOOTER / ABOUT US (TÍTULO ARRIBA Y CENTRADO)
+========================================================= */
+footer { 
+    background-color: #490080; 
+    width: 100%; 
+    padding: 60px 0; 
+    position: relative; 
     display: flex;
+    flex-direction: column; /* Asegura el orden vertical: Título -> Equipo */
     align-items: center;
-    justify-content: center;
-    padding: 0;
-    margin-bottom: 0; 
+    clear: both;
 }
 
-.promo-centered { text-align: center; }
-
-/* Efecto Cristal (Apple Glassmorphism) */
-.glass-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-    border-radius: 20px;
+/* Título "About us" centrado arriba */
+h1.aboutus { 
+    font-family: 'King', sans-serif;
+    font-size: 80px; 
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 30px #CD92F2;
 }
 
-/* --- PELUCHE CENTRADO --- */
-.promo-plushy-section {
-    position: relative;
-    width: 100%;
-    min-height: 800px;
+/* Contenedor de fotos de equipo */
+div.team { 
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-start; 
+    flex-wrap: wrap; 
+    gap: 30px; 
+    width: 95%;
+} 
+
+/* Cada perfil individual */
+div.pfp { 
+    width: 280px; 
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    overflow: hidden;
-    margin-top: 0px; 
-    margin-bottom: 0px; 
-}
-.promo-plushy-bg {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background-image: url('../images/charlotte_plushies.png');
-    background-size: cover; background-position: center;
-    filter: blur(8px) scale(1.1); z-index: 1;
-}
-.promo-plushy-content { position: relative; z-index: 2; text-align: center; width: 100%; }
-.charlotte-title { font-size: 70px; margin-bottom: 20px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); font-family: 'King', sans-serif; }
-.plushy-main-image { max-height: 550px; width: auto; filter: drop-shadow(0px 15px 25px rgba(0,0,0,0.6)); transition: transform 0.3s; }
-.plushy-main-image:hover { transform: scale(1.05); }
-.buy-now { font-size: 45px; margin-top: 20px; font-family: 'King', sans-serif; }
-
-/* --- BANDA DE NEW STUFF --- */
-div.ourstuff { background-color:#490080; width: 100%; padding: 60px 0; margin: 0 0 60px 0; }
-h1.ourstufftext { text-align: center; font-size: 150px; color: white; margin: 0; line-height: 1;}
-
-/* --- TAZA --- */
-.promo-mug-section {
-    display: flex; align-items: center; justify-content: center; gap: 50px;
-    padding: 60px 40px; max-width: 1200px; margin: 80px auto;
-}
-.mug-img { width: 100%; max-width: 450px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
-.mug-text { font-family: 'King', sans-serif; text-align: left; }
-.mug-text h1 { font-size: 50px; margin: 10px 0; }
-.mug-text p { font-size: 35px; margin: 0; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
-
-/* --- TÍTULO DE CAMISETAS --- */
-.shirt-title-container { width: 100%; text-align: center; margin: 100px 0 60px 0; }
-.shirt-title-centered { font-family: 'King', sans-serif; font-size: 45px; }
-
-/* --- GRID DE CAMISETAS --- */
-.shirts-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px; width: 90%; max-width: 1400px; margin: 0 auto 100px auto; 
-}
-.t-shirt-box {
-    padding: 30px; text-align: center; font-family: 'King', sans-serif;
-    display: flex; flex-direction: column; justify-content: space-between; align-items: center; height: 100%; 
-}
-.t-shirt-box a { flex-grow: 1; display: flex; align-items: center; justify-content: center; width: 100%; }
-.t-shirt-box img {
-    height: 350px; width: auto; max-width: 100%; object-fit: contain;
-    margin: 20px 0; filter: drop-shadow(0 5px 15px rgba(0,0,0,0.4)); transition: transform 0.3s;
-}
-.t-shirt-box img:hover { transform: scale(1.05); }
-
-/* FUENTE ITIM PARA LOS PRODUCTOS */
-.product-title {
-    font-family: 'Itim', sans-serif; font-size: 45px; margin-bottom: 10px;
-    color: aliceblue; text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    text-align: center; 
 }
 
-/* RESPONSIVE */
+/* Estilo de las fotos de perfil */
+img.pfp { 
+    width: 180px; 
+    height: 180px; 
+    object-fit: cover; 
+    border-radius: 50%; 
+    border: 4px solid white;
+    margin-bottom: 15px; 
+    transition: transform 0.3s;
+}
+
+img.pfp:hover { 
+    transform: scale(1.1); 
+    border-color: #CD92F2; 
+    box-shadow: 0 0 20px #CD92F2; 
+}
+
+/* Nombres y descripciones */
+h2.pfp { font-size: 28px; margin-bottom: 5px; }
+p.pfp { font-size: 16px; font-family: Arial, sans-serif; line-height: 1.3; }
+
+/* Logo Quackson en la esquina */
+div.logo { position: absolute; top: 20px; left: 30px; }
+img.logo { width: 100px; height: auto; }
+
+/* =========================================================
+   6. RESPONSIVE
+========================================================= */
 @media (max-width: 900px) {
-    header.promo-header { height: auto; padding: 60px 0; }
-    .promo-mug-section { flex-direction: column; text-align: center; margin: 50px auto; }
-    .mug-text { text-align: center; }
+    h1.aboutus { font-size: 50px; }
     .shirts-grid { grid-template-columns: 1fr; }
-    .plushy-main-image { max-height: 400px; }
-    .product-title { font-size: 35px; } 
-    h1.ourstufftext { font-size: 80px; }
+    div.team { flex-direction: column; align-items: center; }
 }
